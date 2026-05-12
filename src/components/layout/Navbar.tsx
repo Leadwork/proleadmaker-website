@@ -74,7 +74,11 @@ export default function Navbar() {
           </Link>
           <Link
             href="/#free-sample"
-            className="text-sm font-black px-6 py-2.5 rounded-xl bg-gradient-brand text-white shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/40 hover:-translate-y-0.5 transition-all duration-300 tracking-tight"
+            className="text-sm font-black px-6 py-2.5 rounded-xl text-white shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/40 hover:-translate-y-0.5 transition-all duration-300 tracking-tight"
+            style={{ 
+              background: 'linear-gradient(135deg, #6d28d9 0%, #a21caf 50%, #be185d 100%)',
+              color: 'white'
+            }}
           >
             Get FREE Sample
           </Link>
@@ -133,7 +137,11 @@ export default function Navbar() {
             </Link>
             <Link
               href="/#free-sample"
-              className="text-center text-sm font-black px-5 py-3 rounded-xl bg-gradient-brand text-white shadow-lg tracking-tight"
+              className="text-center text-sm font-black px-5 py-3 rounded-xl text-white shadow-lg tracking-tight"
+              style={{ 
+                background: 'linear-gradient(135deg, #6d28d9 0%, #a21caf 50%, #be185d 100%)',
+                color: 'white'
+              }}
             >
               Get FREE Sample
             </Link>
