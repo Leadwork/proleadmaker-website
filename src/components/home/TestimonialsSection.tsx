@@ -3,15 +3,20 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 const reviewImages = [
-  "review1.jpg", "review2.jpg", "review3.jpg", "review4.jpg", "review5.jpg",
-  "review6.jpg", "review7.jpg", "review8.jpg", "review9.jpg", "review10.jpg",
-  "review11.jpg", "review12.jpg", "review13.jpg", "review14.jpg", "review15.jpg",
-  "review16.jpg", "review17.jpg", "review18.jpg", "review19.jpg", "review20.jpg",
-  "review21.jpg", "review22.jpg", "review23.jpg", "review24.jpg", "review25.jpg",
-  "review26.jpg", "review27.jpg", "review28.jpg", "review29.jpg", "review30.jpg",
-  "review31.jpg", "review32.jpg", "review33.jpg", "review34.jpg", "review35.jpg",
-  "review36.jpg", "review37.jpg", "review38.jpg", "review39.jpg", "review40.jpg",
-  "review41.jpg", "review42.jpg"
+  "adedamola00.png", "aishvaryaa_pooj-.png", "aishvaryaa_pooj.png", 
+  "blackbirdhealth.png", "daniellemolitor.png", "deltataxllc.png", 
+  "devonhector.png", "goodhumaninc-.png", "goodhumaninc.png", 
+  "jononsighteyes.png", "joshdedmon.png", "keybaby3.png", 
+  "leadatlas.png", "marshman78.png", "matthewboye.png", 
+  "mikailatiyeh.png", "modou_02-.png", "modou_02.png", 
+  "mo_mo_smith.png", "mustangdeet.png", "parkerwarren955.png", 
+  "rmarstonaoa.png", "sachar07.png", "sandralee81.png", 
+  "sauvaa.png", "smithbaaron.png", "s_hoefs.png", 
+  "tbrew811.png", "trexlh99.png", "Upwork_Review_1.png", 
+  "Upwork_Review_10.png", "Upwork_Review_11.png", "Upwork_Review_12.png", 
+  "Upwork_Review_2.png", "Upwork_Review_3.png", "Upwork_Review_4.png", 
+  "Upwork_Review_5.png", "Upwork_Review_6.png", "Upwork_Review_7.png", 
+  "Upwork_Review_8.png", "Upwork_Review_9.png", "wheninrome.png"
 ];
 
 export default function TestimonialsSection() {

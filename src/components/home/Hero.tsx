@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="orb w-[500px] h-[500px] bg-brand-purple/10 -top-[200px] right-[5%]" style={{ animationDelay: "0s" }} />
       <div className="orb w-[400px] h-[400px] bg-brand-pink/10 bottom-[-100px] left-[5%]" style={{ animationDelay: "-4s" }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 py-24 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
         {/* Left Content */}
         <div className="text-center lg:text-left">
           {/* Badge */}
@@ -39,7 +39,7 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Link
               href="/#free-sample"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-brand text-white font-bold text-base shadow-xl shadow-brand-purple/20 hover:shadow-brand-purple/40 hover:-translate-y-1 transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-brand text-white font-black text-base shadow-xl shadow-brand-purple/20 hover:shadow-brand-purple/40 hover:-translate-y-1 transition-all duration-300 tracking-tight"
             >
               <span>🎁</span> Get FREE Sample Leads Before You Order
             </Link>

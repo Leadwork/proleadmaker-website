@@ -39,9 +39,9 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-brand":
-          "linear-gradient(135deg, #7c3aed 0%, #c026d3 50%, #e91e8c 100%)",
+          "linear-gradient(135deg, #6d28d9 0%, #a21caf 50%, #be185d 100%)",
         "gradient-brand-reverse":
-          "linear-gradient(135deg, #e91e8c 0%, #c026d3 50%, #7c3aed 100%)",
+          "linear-gradient(135deg, #be185d 0%, #a21caf 50%, #6d28d9 100%)",
         "gradient-dark":
           "linear-gradient(135deg, #030014 0%, #120a2e 50%, #1a103d 100%)",
         "gradient-hero":

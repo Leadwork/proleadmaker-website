@@ -74,7 +74,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/#free-sample"
-            className="text-sm font-bold px-6 py-2.5 rounded-xl bg-gradient-brand text-white shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/40 hover:-translate-y-0.5 transition-all duration-300"
+            className="text-sm font-black px-6 py-2.5 rounded-xl bg-gradient-brand text-white shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/40 hover:-translate-y-0.5 transition-all duration-300 tracking-tight"
           >
             Get FREE Sample
           </Link>
@@ -133,7 +133,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/#free-sample"
-              className="text-center text-sm font-bold px-5 py-3 rounded-xl bg-gradient-brand text-white shadow-lg"
+              className="text-center text-sm font-black px-5 py-3 rounded-xl bg-gradient-brand text-white shadow-lg tracking-tight"
             >
               Get FREE Sample
             </Link>

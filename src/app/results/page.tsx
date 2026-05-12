@@ -147,11 +147,16 @@ export default function ResultsPage() {
             />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-            {["goodhumaninc", "marshman78", "modou_02", "s_hoefs"].map(
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            {[
+              "goodhumaninc", "marshman78", "modou_02", "s_hoefs", 
+              "adedamola00", "aishvaryaa_pooj", "blackbirdhealth", 
+              "daniellemolitor", "deltataxllc", "devonhector", 
+              "mikailatiyeh", "mustangdeet"
+            ].map(
               (name, i) => (
                 <ScrollReveal key={name} delay={i * 100}>
-                  <div className="rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                  <div className="rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 bg-white">
                     <Image
                       src={`/images/reviews/${name}.png`}
                       alt={`${name} review`}
