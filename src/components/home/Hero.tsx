@@ -75,25 +75,6 @@ export default function Hero() {
               videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
               isStandalone={false}
             />
-            
-            {/* Floating Trust Signals */}
-            <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-5 min-w-[200px] shadow-2xl border border-white/50 animate-float">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-full bg-brand-purple/10 flex items-center justify-center text-xl">🏆</div>
-                <div>
-                  <div className="text-xl font-black text-indigo-950">Top Rated</div>
-                  <div className="text-[10px] font-bold text-brand-purple uppercase tracking-tighter">Verified by Upwork</div>
-                </div>
-              </div>
-              <div className="flex gap-1 text-amber-400 text-sm">
-                {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
-              </div>
-            </div>
-
-            <div className="absolute -top-6 -left-6 glass rounded-2xl p-5 shadow-2xl border border-white/50 animate-float-delayed">
-              <div className="text-3xl font-black text-indigo-950">98%</div>
-              <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">Data Accuracy</div>
-            </div>
           </div>
           
           {/* Decorative Background for Video */}

@@ -23,7 +23,7 @@ export default function CTASection() {
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6 font-display tracking-tight leading-tight">
                 Ready to Scale Your Outreach?
               </h2>
-              <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto font-medium">
+              <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto font-medium">
                 Join 600+ high-growth businesses using ProLeadMaker&apos;s 
                 intelligence to fill their pipelines with triple-verified prospects.
               </p>
@@ -41,7 +41,7 @@ export default function CTASection() {
                   🚀 Start Growing Your Outreach
                 </Link>
               </div>
-              <p className="mt-8 text-white/40 text-xs font-bold uppercase tracking-widest">
+              <p className="mt-8 text-white/60 text-xs font-bold uppercase tracking-widest">
                 No credit card required · 24h delivery · 100% human verified
               </p>
             </div>

@@ -222,33 +222,33 @@ export const tools = [
 
 export const blogPosts = [
   {
-    slug: "signal-based-prospecting",
-    title: "What Is Signal-Based Prospecting and Why It Beats Generic Lead Lists",
+    slug: "hight-converting-b2b-outbound-strategy",
+    title: "How to Build a High-Converting B2B Outbound Strategy in 2026",
     excerpt:
-      "Discover how signal-based prospecting identifies buyers who are actually ready to purchase — and why it dramatically outperforms traditional list building.",
-    category: "Signal-Based Prospecting",
-    date: "2026-05-10",
+      "Learn the secrets of signal-based prospecting and how to reach the right decision-makers at the perfect time.",
+    category: "Strategy",
+    date: "May 12, 2026",
+    readTime: "6 min read",
+    author: "MD. Al Amin",
+  },
+  {
+    slug: "manual-vs-automated-data-research",
+    title: "Why Manual Data Research Beats Automated Scraping Every Time",
+    excerpt:
+      "Discover why human-verified data leads to 40% higher open rates and fewer bounce backs in your cold email campaigns.",
+    category: "Data Quality",
+    date: "May 10, 2026",
+    readTime: "4 min read",
+    author: "MD. Al Amin",
+  },
+  {
+    slug: "local-lead-generation-guide",
+    title: "The Ultimate Guide to Local Lead Generation for Service Businesses",
+    excerpt:
+      "A step-by-step guide for HVAC, plumbing, and real estate businesses to dominate their local market with targeted leads.",
+    category: "Local Growth",
+    date: "May 5, 2026",
     readTime: "8 min read",
-    author: "MD. Al Amin",
-  },
-  {
-    slug: "cold-email-deliverability-guide",
-    title: "The Complete Guide to Cold Email Deliverability in 2026",
-    excerpt:
-      "Everything you need to know about DNS setup, domain warming, content optimization, and inbox placement to ensure your cold emails actually get delivered.",
-    category: "Email Deliverability",
-    date: "2026-05-05",
-    readTime: "12 min read",
-    author: "MD. Al Amin",
-  },
-  {
-    slug: "build-icp-that-converts",
-    title: "How to Build an ICP That Converts: A B2B Framework",
-    excerpt:
-      "A practical framework for building an Ideal Customer Profile that drives real pipeline — not vanity metrics. Includes templates and real examples.",
-    category: "B2B Lead Generation",
-    date: "2026-04-28",
-    readTime: "10 min read",
     author: "MD. Al Amin",
   },
 ];

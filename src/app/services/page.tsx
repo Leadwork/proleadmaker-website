@@ -50,8 +50,15 @@ export default function ServicesPage() {
                   <div
                     className={`${i % 2 !== 0 ? "lg:order-2" : ""}`}
                   >
-                    <div className="bg-slate-50 rounded-[3rem] p-16 md:p-24 text-center text-8xl hover:scale-[1.02] hover:-rotate-1 transition-all duration-500 border border-slate-100 shadow-3xl shadow-indigo-950/5 group">
-                      <span className="inline-block group-hover:scale-110 transition-transform">{service.icon}</span>
+                    <div className="relative aspect-square md:aspect-video lg:aspect-square bg-slate-50 rounded-[3rem] flex items-center justify-center border border-slate-100 shadow-3xl shadow-indigo-950/5 group overflow-hidden">
+                      {/* Animated Background for box */}
+                      <div className="absolute inset-0 bg-grid opacity-20" />
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-brand-purple/5 blur-3xl group-hover:bg-brand-purple/10 transition-all" />
+                      <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-pink/5 blur-3xl group-hover:bg-brand-pink/10 transition-all" />
+                      
+                      <div className="relative z-10 w-32 h-32 md:w-40 md:h-40 rounded-[2.5rem] bg-white border border-slate-200 flex items-center justify-center text-7xl md:text-8xl shadow-2xl group-hover:scale-110 group-hover:-rotate-3 transition-all duration-700">
+                        {service.icon}
+                      </div>
                     </div>
                   </div>
 
@@ -74,19 +81,27 @@ export default function ServicesPage() {
                           key={feature}
                           className="flex items-center gap-3 text-sm font-bold text-slate-500 hover:text-indigo-950 transition-colors"
                         >
-                          <span className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center text-xs">✓</span>
+                          <span className="w-6 h-6 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center text-[10px]">✓</span>
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <a
-                      href={siteConfig.calendly}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-indigo-950 text-white font-black text-sm hover:bg-brand-purple transition-all shadow-xl shadow-indigo-950/20"
-                    >
-                      Book Strategy Call →
-                    </a>
+                    <div className="flex flex-wrap gap-4">
+                      <a
+                        href={siteConfig.calendly}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-indigo-950 text-white font-black text-sm hover:bg-brand-purple transition-all shadow-xl shadow-indigo-950/20"
+                      >
+                        Book Strategy Call →
+                      </a>
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white border border-slate-200 text-slate-700 font-black text-sm hover:bg-slate-50 transition-all"
+                      >
+                        Request Pricing
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>

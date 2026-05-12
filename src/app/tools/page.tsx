@@ -37,16 +37,22 @@ export default function ToolsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tools.map((tool, i) => (
               <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-slate-50 rounded-[2.5rem] p-10 hover:bg-white hover:shadow-3xl hover:shadow-indigo-950/5 transition-all duration-500 h-full flex flex-col border border-slate-100 group relative">
+                <div className="bg-slate-50 rounded-[2.5rem] p-10 hover:bg-white hover:shadow-3xl hover:shadow-indigo-950/5 transition-all duration-500 h-full flex flex-col border border-slate-100 group relative overflow-hidden">
                   <div className="absolute top-6 right-6">
                     <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-brand-purple/5 border border-brand-purple/10 text-brand-purple">Soon</span>
                   </div>
-                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform shadow-sm">{tool.icon}</div>
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:rotate-6 transition-transform shadow-sm">{tool.icon}</div>
                   <h3 className="text-xl font-black text-indigo-950 mb-4 tracking-tight">{tool.title}</h3>
                   <p className="text-sm font-medium text-slate-500 leading-relaxed flex-grow">{tool.description}</p>
-                  <button disabled className="mt-10 w-full py-4 rounded-xl bg-slate-200/50 text-slate-400 font-black text-xs uppercase tracking-widest cursor-not-allowed">
-                    Under Development
-                  </button>
+                  
+                  <div className="mt-10 pt-6 border-t border-slate-100">
+                    <Link 
+                      href="/contact?subject=Notify me about tool: "
+                      className="inline-flex items-center gap-2 text-xs font-black text-brand-purple uppercase tracking-widest group/link"
+                    >
+                      Get Early Access <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </Link>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}

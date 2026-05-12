@@ -50,7 +50,7 @@ export default function Process() {
           {steps.map((step, i) => (
             <ScrollReveal key={i} delay={i * 100}>
               <div className="bg-white rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-brand-purple/10 hover:-translate-y-2 transition-all duration-500 cursor-default relative h-full border border-slate-100 group">
-                <div className="text-6xl font-black text-slate-100 absolute top-4 right-6 leading-none group-hover:text-brand-purple/10 transition-colors">
+                <div className="text-6xl font-black text-slate-200/50 absolute top-4 right-6 leading-none group-hover:text-brand-purple/10 transition-colors">
                   {step.num}
                 </div>
                 <div className="w-16 h-16 rounded-2xl bg-brand-purple/5 flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 group-hover:bg-brand-purple/10 transition-all">
