@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeader from "@/components/shared/SectionHeader";
+import VideoSection from "@/components/shared/VideoSection";
 import CTASection from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
