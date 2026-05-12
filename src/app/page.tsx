@@ -7,6 +7,7 @@ import FreeSampleOffer from "@/components/home/FreeSampleOffer";
 import StatsSection from "@/components/home/StatsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import VideoSection from "@/components/shared/VideoSection";
+import CalendlySection from "@/components/home/CalendlySection";
 import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
       <StatsSection />
       <TestimonialsSection />
       <VideoSection />
+      <CalendlySection />
       <CTASection />
     </>
   );

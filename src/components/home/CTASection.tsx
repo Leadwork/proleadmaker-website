@@ -4,38 +4,46 @@ import { siteConfig } from "@/lib/constants";
 
 export default function CTASection() {
   return (
-    <section className="py-24 relative">
-      <div className="max-w-4xl mx-auto px-5 md:px-8">
+    <section className="py-24 relative bg-white">
+      <div className="max-w-5xl mx-auto px-5 md:px-8">
         <ScrollReveal direction="scale">
-          <div className="relative rounded-3xl overflow-hidden text-center">
+          <div className="relative rounded-[3rem] overflow-hidden text-center shadow-3xl shadow-brand-purple/20">
             {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-purple via-brand-magenta/80 to-brand-pink" />
-            <div className="absolute top-[-50%] right-[-10%] w-[400px] h-[400px] rounded-full bg-white/[0.04]" />
+            <div className="absolute inset-0 bg-indigo-950" />
+            <div className="absolute inset-0 bg-grid opacity-10" />
+            <div className="absolute top-[-50%] right-[-10%] w-[500px] h-[500px] rounded-full bg-brand-purple/10 blur-3xl" />
+            <div className="absolute bottom-[-50%] left-[-10%] w-[500px] h-[500px] rounded-full bg-brand-pink/10 blur-3xl" />
 
-            <div className="relative z-10 py-16 px-8 md:px-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">
-                Ready to Grow Your Pipeline?
+            <div className="relative z-10 py-20 px-8 md:px-16">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-8">
+                <span className="text-xs font-black tracking-widest uppercase text-white">
+                  Start Today
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 font-display tracking-tight leading-tight">
+                Ready to Scale Your Outreach?
               </h2>
-              <p className="text-white/70 text-lg mb-8 max-w-lg mx-auto">
-                Join 617+ businesses already using Pro Lead Maker&apos;s signal-based
-                intelligence to fill their pipelines with pre-qualified prospects.
+              <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto font-medium">
+                Join 600+ high-growth businesses using ProLeadMaker&apos;s 
+                intelligence to fill their pipelines with triple-verified prospects.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-5 justify-center">
                 <Link
                   href="/#free-sample"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-dark-900 font-bold text-sm shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-indigo-950 font-black text-base shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  🎁 Get Free Sample Leads
+                  🎁 Get FREE Sample Leads
                 </Link>
-                <a
-                  href={siteConfig.calendly}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-white/30 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300"
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-brand-purple text-white font-black text-base shadow-xl hover:bg-brand-magenta hover:-translate-y-1 transition-all duration-300"
                 >
-                  📞 Schedule a Strategy Call
-                </a>
+                  🚀 Start Growing Your Outreach
+                </Link>
               </div>
+              <p className="mt-8 text-white/40 text-xs font-bold uppercase tracking-widest">
+                No credit card required · 24h delivery · 100% human verified
+              </p>
             </div>
           </div>
         </ScrollReveal>

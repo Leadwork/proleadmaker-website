@@ -23,52 +23,76 @@ const whyCards = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-950 via-dark-800 to-brand-purple/15" />
-        <div className="orb w-[400px] h-[400px] bg-brand-purple/15 top-[-100px] right-[10%]" />
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-5">
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4 animate-fade-up">About Pro Lead Maker</h1>
-          <p className="text-white/60 text-lg animate-fade-up-delayed">A results-driven lead intelligence agency helping businesses scale with signal-based, verified data.</p>
+      <section className="relative py-24 overflow-hidden bg-slate-50">
+        <div className="absolute inset-0 bg-grid opacity-5" />
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-5">
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/5 border border-brand-purple/10 mb-6">
+              <span className="text-[10px] font-black tracking-[0.2em] uppercase text-brand-purple">
+                Our Story
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-indigo-950 mb-8 leading-tight tracking-tight">
+              A Results-Driven Lead Intelligence Agency
+            </h1>
+            <p className="text-slate-500 text-xl font-medium leading-relaxed max-w-3xl mx-auto">
+              Helping businesses scale with pre-qualified, signal-based, 
+              and manually verified prospect data since 2019.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
-              <Image src="/images/Team-Founder.jpg" alt="MD. Al Amin – Founder of Pro Lead Maker" width={500} height={600} className="rounded-3xl shadow-2xl shadow-brand-purple/10 border border-white/10 w-full h-auto hover:scale-[1.02] transition-transform duration-500" />
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-brand blur-2xl opacity-10 rounded-[3rem]" />
+                <Image 
+                  src="/images/Team-Founder.jpg" 
+                  alt="MD. Al Amin – Founder of Pro Lead Maker" 
+                  width={500} 
+                  height={600} 
+                  className="relative z-10 rounded-[2.5rem] shadow-3xl shadow-indigo-950/10 border-8 border-white w-full h-auto" 
+                />
+              </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 mb-4">
-                <span className="text-[10px] font-semibold tracking-widest uppercase text-brand-purple-light">Our Story</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 font-display">About Pro Lead Maker</h2>
-              <p className="text-white/50 leading-relaxed mb-4">Pro Lead Maker is a results-driven B2B lead intelligence agency helping businesses scale with pre-qualified, signal-based prospect data. Founded by MD. Al Amin, we&apos;ve grown from a solo operation into a trusted data partner for 617+ clients worldwide.</p>
-              <p className="text-white/50 leading-relaxed mb-6">Unlike generic list providers, we take a signal-based approach — personally researching and verifying every contact based on real buying intent indicators. This is why our data consistently achieves 98%+ accuracy and why clients keep coming back.</p>
-              <div className="glass rounded-2xl p-5 border-l-4 border-brand-purple">
-                <p className="text-white/80 font-semibold text-sm">🎯 Our Mission: To provide pre-qualified, signal-based lead intelligence that helps businesses grow faster — with accuracy you can trust and speed you can count on.</p>
+              <h2 className="text-3xl md:text-4xl font-black text-indigo-950 mb-8 tracking-tight">The ProLeadMaker Difference</h2>
+              <p className="text-slate-500 text-lg font-medium leading-relaxed mb-6">ProLeadMaker is a premier B2B lead intelligence agency specialized in delivering pre-qualified, signal-based prospect data. Founded by MD. Al Amin, we&apos;ve evolved into a trusted growth partner for over 600+ businesses worldwide.</p>
+              <p className="text-slate-500 text-lg font-medium leading-relaxed mb-10">Unlike automated list providers, we take a signal-based approach — personally researching and verifying every contact based on real buying intent. This human-in-the-loop verification is why we guarantee 98%+ accuracy on every project.</p>
+              <div className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100 border-l-8 border-l-brand-purple">
+                <p className="text-indigo-950 font-black text-lg leading-relaxed">
+                  "Our mission is to empower outbound teams with the most accurate, intent-driven contact data in the market, enabling them to focus on closing, not chasing."
+                </p>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-dark-900/50">
-        <div className="section-gradient-line absolute left-0 right-0" />
+      {/* Integrated Video Section for About Page */}
+      <VideoSection />
+
+      <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <ScrollReveal>
-            <SectionHeader label="Meet the Founder" title="The Person Behind the Data" />
+            <SectionHeader label="Meet the Founder" title="Expertise You Can Trust" />
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <div className="glass rounded-3xl p-8 mt-10 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 items-center">
-              <Image src="/images/Team-Founder.jpg" alt="MD. Al Amin" width={150} height={150} className="w-[150px] h-[150px] rounded-full object-cover border-2 border-brand-purple mx-auto md:mx-0" />
+            <div className="bg-white rounded-[3rem] p-10 md:p-14 mt-12 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 items-center border border-slate-100 shadow-2xl shadow-indigo-950/5">
+              <div className="relative">
+                <div className="absolute -inset-2 bg-brand-purple/20 blur-xl rounded-full" />
+                <Image src="/images/Team-Founder.jpg" alt="MD. Al Amin" width={200} height={200} className="relative z-10 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full object-cover border-8 border-white shadow-xl mx-auto md:mx-0" />
+              </div>
               <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold text-white font-display">MD. Al Amin</h3>
-                <div className="text-sm text-brand-purple-light font-semibold mb-3">Founder & Lead Intelligence Specialist</div>
-                <p className="text-sm text-white/50 leading-relaxed mb-4">With 7+ years of B2B data experience, Al Amin has delivered over 100,000+ verified leads across 150+ industries. As a Fiverr Level 2 Seller and Upwork Top Rated freelancer, he brings a signal-based, quality-obsessed approach to every project.</p>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                  {["🏆 Upwork Top Rated", "⭐ Fiverr Level 2", "🎯 Signal-Based Leads", "🔗 LinkedIn Prospecting", "📊 Data Enrichment", "📧 Email Verification", "🚀 100K+ Leads"].map((badge) => (
-                    <span key={badge} className="px-3 py-1 rounded-full text-xs font-medium bg-brand-purple/10 border border-brand-purple/20 text-white/60 hover:bg-brand-purple/20 hover:text-white transition-all">{badge}</span>
+                <h3 className="text-3xl font-black text-indigo-950 mb-2 tracking-tight">MD. Al Amin</h3>
+                <div className="text-sm font-black text-brand-purple uppercase tracking-widest mb-6">Founder & Lead Intelligence Specialist</div>
+                <p className="text-lg text-slate-500 font-medium leading-relaxed mb-8">With over 7 years of B2B data expertise, Al Amin has delivered 100,000+ verified leads across 150+ industries. As a Top-Rated specialist on both Upwork and Fiverr, he brings a signal-based, quality-first philosophy to every client engagement.</p>
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                  {["🏆 Upwork Top Rated", "⭐ Fiverr Level 2", "🎯 Signal-Based Specialist", "📧 Delivery Expert"].map((badge) => (
+                    <span key={badge} className="px-5 py-2 rounded-xl text-xs font-black bg-slate-50 border border-slate-100 text-slate-500 uppercase tracking-widest">{badge}</span>
                   ))}
                 </div>
               </div>
@@ -77,18 +101,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <ScrollReveal>
-            <SectionHeader label="Why Choose Us" title="What Makes Us Different" />
+            <SectionHeader label="Values" title="What Drives ProLeadMaker" />
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
             {whyCards.map((card, i) => (
               <ScrollReveal key={i} delay={i * 80}>
-                <div className="glass rounded-2xl p-5 hover-glow h-full">
-                  <div className="text-2xl mb-3">{card.icon}</div>
-                  <h3 className="font-bold text-white text-sm mb-2">{card.title}</h3>
-                  <p className="text-xs text-white/50 leading-relaxed">{card.desc}</p>
+                <div className="bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-brand-purple/5 transition-all duration-500 h-full border border-slate-100 group">
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform">{card.icon}</div>
+                  <h3 className="text-lg font-black text-indigo-950 mb-3 tracking-tight">{card.title}</h3>
+                  <p className="text-sm text-slate-500 font-medium leading-relaxed">{card.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

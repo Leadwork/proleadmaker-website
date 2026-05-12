@@ -31,18 +31,18 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "617+", label: "Clients Served" },
+  { value: "600+", label: "Happy Clients" },
   { value: "100K+", label: "Verified Leads" },
-  { value: "1,000+", label: "Orders Done" },
+  { value: "1,000+", label: "Orders Completed" },
 ];
 
 export const trustBadges = [
-  { icon: "✅", text: "98%+ Data Accuracy" },
+  { icon: "🛡️", text: "98%+ Data Accuracy" },
   { icon: "⭐", text: "Fiverr Level 2" },
   { icon: "🏆", text: "Upwork Top Rated" },
   { icon: "⚡", text: "Fast Delivery" },
   { icon: "🔄", text: "Free Replacement" },
-  { icon: "🎯", text: "Signal-Based Data" },
+  { icon: "🎯", text: "Triple-Verified" },
 ];
 
 export const services = [

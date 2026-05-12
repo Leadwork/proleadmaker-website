@@ -1,64 +1,104 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { blogPosts } from "@/lib/blog-data";
+import SectionHeader from "@/components/shared/SectionHeader";
 import ScrollReveal from "@/components/shared/ScrollReveal";
-import { blogPosts } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Expert insights on signal-based prospecting, B2B lead generation, cold email, and outreach systems.",
+export const metadata = {
+  title: "Insights & Strategy Blog",
+  description: "Expert advice on B2B lead generation, signal-based prospecting, and scaling your outbound sales.",
 };
 
 export default function BlogPage() {
   return (
-    <>
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-950 via-dark-800 to-brand-pink/10" />
-        <div className="orb w-[400px] h-[400px] bg-brand-pink/15 top-[-100px] right-[10%]" />
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-5">
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4 animate-fade-up">Blog & Insights</h1>
-          <p className="text-white/60 text-lg animate-fade-up-delayed">Expert guides on signal-based prospecting, cold email, and outreach systems that convert.</p>
-        </div>
-      </section>
+    <div className="pt-32 pb-24 bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <ScrollReveal>
+          <SectionHeader
+            label="ProLeadMaker Blog"
+            title="Insights to Fuel Your Growth"
+            subtitle="Expert strategy and data intelligence tips from the frontline of B2B lead generation."
+          />
+        </ScrollReveal>
 
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {["All", "Signal-Based Prospecting", "B2B Lead Generation", "Cold Email", "Email Deliverability", "LinkedIn Outreach"].map((cat) => (
-              <button key={cat} className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${cat === "All" ? "bg-brand-purple/20 border border-brand-purple/40 text-white" : "bg-white/5 border border-white/10 text-white/50 hover:bg-brand-purple/10 hover:text-white"}`}>{cat}</button>
-            ))}
-          </div>
+        {/* Featured Post */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <Link href={`/blog/${blogPosts[0].slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-slate-50 rounded-[3rem] p-8 md:p-12 border border-slate-100 hover:shadow-3xl hover:shadow-brand-purple/10 transition-all duration-500">
+              <div className="relative aspect-[16/9] lg:aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
+                <Image
+                  src={blogPosts[0].image}
+                  alt={blogPosts[0].title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div>
+                <div className="flex gap-4 mb-6">
+                  <span className="px-4 py-1.5 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-black uppercase tracking-widest">
+                    {blogPosts[0].category}
+                  </span>
+                  <span className="text-slate-400 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                    {blogPosts[0].readTime}
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-black text-indigo-950 mb-6 group-hover:text-brand-purple transition-colors leading-tight">
+                  {blogPosts[0].title}
+                </h2>
+                <p className="text-slate-500 text-lg mb-8 font-medium leading-relaxed">
+                  {blogPosts[0].excerpt}
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-brand-purple/10 flex items-center justify-center text-xl">✍️</div>
+                  <div>
+                    <div className="text-sm font-black text-indigo-950">{blogPosts[0].author}</div>
+                    <div className="text-xs font-bold text-slate-400">{blogPosts[0].date}</div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </ScrollReveal>
         </div>
-      </section>
 
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post, i) => (
-              <ScrollReveal key={post.slug} delay={i * 100}>
-                <Link href={`/blog/${post.slug}`} className="block group">
-                  <article className="glass rounded-2xl overflow-hidden hover-glow h-full flex flex-col">
-                    <div className="aspect-[16/9] bg-gradient-to-br from-brand-purple/20 via-brand-magenta/10 to-brand-pink/20 flex items-center justify-center">
-                      <span className="text-5xl opacity-30">📝</span>
-                    </div>
-                    <div className="p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-[10px] uppercase tracking-wider font-semibold text-brand-purple-light px-2.5 py-0.5 rounded-full bg-brand-purple/10 border border-brand-purple/20">{post.category}</span>
-                        <span className="text-[11px] text-white/30">{post.readTime}</span>
-                      </div>
-                      <h2 className="text-lg font-bold text-white mb-2 group-hover:text-brand-purple-light transition-colors font-display">{post.title}</h2>
-                      <p className="text-sm text-white/40 leading-relaxed flex-1">{post.excerpt}</p>
-                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
-                        <span className="text-xs text-white/30">{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
-                        <span className="text-xs text-brand-purple-light font-medium group-hover:translate-x-1 transition-transform">Read More →</span>
-                      </div>
-                    </div>
-                  </article>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
+        {/* Grid Posts */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+          {blogPosts.slice(1).map((post, i) => (
+            <ScrollReveal key={post.id} delay={i * 100}>
+              <Link href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:shadow-brand-purple/10 hover:-translate-y-2 transition-all duration-500">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex gap-3 mb-4">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-purple">
+                      {post.category}
+                    </span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-black text-indigo-950 mb-4 group-hover:text-brand-purple transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 font-medium line-clamp-3 mb-6">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
+                    <span className="text-xs font-black text-indigo-950 uppercase tracking-widest">Read Article</span>
+                    <span className="text-xs font-bold text-slate-400">{post.date}</span>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

@@ -1,70 +1,67 @@
 import Image from "next/image";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeader from "@/components/shared/SectionHeader";
-import { testimonials } from "@/lib/constants";
+
+const reviewImages = [
+  "review1.jpg", "review2.jpg", "review3.jpg", "review4.jpg", "review5.jpg",
+  "review6.jpg", "review7.jpg", "review8.jpg", "review9.jpg", "review10.jpg",
+  "review11.jpg", "review12.jpg", "review13.jpg", "review14.jpg", "review15.jpg",
+  "review16.jpg", "review17.jpg", "review18.jpg", "review19.jpg", "review20.jpg",
+  "review21.jpg", "review22.jpg", "review23.jpg", "review24.jpg", "review25.jpg",
+  "review26.jpg", "review27.jpg", "review28.jpg", "review29.jpg", "review30.jpg",
+  "review31.jpg", "review32.jpg", "review33.jpg", "review34.jpg", "review35.jpg",
+  "review36.jpg", "review37.jpg", "review38.jpg", "review39.jpg", "review40.jpg",
+  "review41.jpg", "review42.jpg"
+];
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative bg-slate-50/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <ScrollReveal>
           <SectionHeader
-            label="Client Reviews"
-            title="What Our Clients Say"
-            subtitle="430+ verified reviews across Fiverr and Upwork. Here's what real clients think about our signal-based lead intelligence."
+            label="Wall of Trust"
+            title="Proof That Our Leads Actually Convert"
+            subtitle="We've helped 600+ businesses grow their pipeline. Here's a glimpse of the feedback from our clients on Fiverr and Upwork."
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
-          {testimonials.map((t, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="glass rounded-2xl p-6 hover-glow cursor-default h-full flex flex-col">
-                {/* Quote */}
-                <div className="text-4xl text-brand-purple/20 font-serif leading-none mb-2">
-                  &ldquo;
-                </div>
-                <p className="text-sm text-white/60 leading-relaxed italic flex-1 mb-5">
-                  {t.text}
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  {t.image ? (
-                    <Image
-                      src={t.image}
-                      alt={t.author}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 rounded-full object-cover border border-white/10"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-magenta flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      {t.author
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")
-                        .slice(0, 2)}
-                    </div>
-                  )}
-                  <div>
-                    <div className="font-bold text-white text-sm">{t.author}</div>
-                    <div className="text-xs text-white/40">
-                      {t.role} · {t.location}
-                    </div>
-                    <div className="text-yellow-400 text-xs mt-0.5">
-                      {"★".repeat(t.rating)}
-                    </div>
-                  </div>
-                  {t.platform !== "Direct" && (
-                    <span className="ml-auto text-[10px] uppercase tracking-wider text-brand-purple-light/60 font-semibold px-2 py-0.5 rounded-full bg-brand-purple/10">
-                      {t.platform}
-                    </span>
-                  )}
-                </div>
+        {/* Masonry-style grid for reviews */}
+        <div className="mt-16 columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+          {reviewImages.map((img, i) => (
+            <ScrollReveal key={i} delay={i % 10 * 50} direction="up">
+              <div className="break-inside-avoid rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-purple/20 transition-all duration-300 group">
+                <Image
+                  src={`/images/reviews/${img}`}
+                  alt={`Client Review ${i + 1}`}
+                  width={400}
+                  height={300}
+                  className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Trust Stats Footer */}
+        <ScrollReveal delay={500}>
+          <div className="mt-20 p-10 rounded-[3rem] bg-indigo-950 text-white text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid opacity-10" />
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl font-black mb-4">Ready to be our next success story?</h3>
+              <p className="text-white/70 mb-8 max-w-2xl mx-auto font-medium">Join 600+ businesses that are consistently booking meetings with our pre-qualified lead lists.</p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a href="#free-sample" className="px-8 py-4 rounded-2xl bg-brand-purple text-white font-black hover:bg-brand-magenta transition-all hover:-translate-y-1 shadow-xl shadow-brand-purple/20">
+                  🎁 Get FREE Sample Leads
+                </a>
+                <a href="/contact" className="px-8 py-4 rounded-2xl bg-white/10 border border-white/20 text-white font-black hover:bg-white/20 transition-all hover:-translate-y-1">
+                  📞 Book a Strategy Call
+                </a>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

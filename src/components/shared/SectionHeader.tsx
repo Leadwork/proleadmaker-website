@@ -3,7 +3,6 @@ interface SectionHeaderProps {
   title: string;
   subtitle?: string;
   center?: boolean;
-  light?: boolean;
 }
 
 export default function SectionHeader({
@@ -11,28 +10,25 @@ export default function SectionHeader({
   title,
   subtitle,
   center = true,
-  light = false,
 }: SectionHeaderProps) {
   return (
     <div className={center ? "text-center" : ""}>
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/10 border border-brand-purple/20 mb-4">
-        <div className="w-2 h-2 rounded-full bg-brand-purple animate-pulse" />
-        <span className="text-xs font-semibold tracking-widest uppercase text-brand-purple-light">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/5 border border-brand-purple/10 mb-6">
+        <div className="w-2 h-2 rounded-full bg-brand-purple animate-blink" />
+        <span className="text-[10px] font-black tracking-[0.2em] uppercase text-brand-purple">
           {label}
         </span>
       </div>
       <h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight mb-4 ${
-          light ? "text-white" : "text-white"
-        }`}
+        className={`text-3xl md:text-4xl lg:text-5xl font-black font-display tracking-tight mb-6 text-indigo-950`}
       >
         {title}
       </h2>
       {subtitle && (
         <p
-          className={`max-w-2xl text-lg leading-relaxed ${
+          className={`max-w-2xl text-lg font-medium leading-relaxed text-slate-500 ${
             center ? "mx-auto" : ""
-          } ${light ? "text-white/60" : "text-white/50"}`}
+          }`}
         >
           {subtitle}
         </p>

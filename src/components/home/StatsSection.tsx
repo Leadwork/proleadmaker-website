@@ -47,16 +47,16 @@ function AnimatedCounter({ target, suffix, decimal, trigger }: {
     requestAnimationFrame(step);
   }, [trigger, target]);
 
-  if (target === 0) return <span className="text-3xl font-bold text-white">24–48h</span>;
+  if (target === 0) return <span className="text-2xl md:text-3xl font-black text-indigo-950 tracking-tighter">24–48h</span>;
 
   const displayed = decimal
     ? (val / 10).toFixed(1)
     : Math.floor(val).toLocaleString();
 
   return (
-    <span className="text-3xl font-bold text-white">
+    <span className="text-3xl md:text-4xl font-black text-indigo-950 tracking-tighter">
       {displayed}
-      {suffix}
+      <span className="text-brand-purple">{suffix}</span>
     </span>
   );
 }
@@ -71,10 +71,10 @@ function ProgressBar({ target, trigger }: { target: number; trigger: boolean }) 
   }, [trigger, target]);
 
   return (
-    <div className="mt-2">
-      <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
+    <div className="mt-4">
+      <div className="h-2 rounded-full bg-slate-100 overflow-hidden">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-brand-purple to-brand-pink transition-all duration-[1800ms] ease-out"
+          className="h-full rounded-full bg-gradient-brand transition-all duration-[1800ms] ease-out"
           style={{ width: `${width}%` }}
         />
       </div>
@@ -103,32 +103,31 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section className="py-24 relative bg-dark-900/50">
-      <div className="section-gradient-line absolute top-0 left-0 right-0" />
+    <section className="py-24 relative bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <ScrollReveal>
           <SectionHeader
             label="Our Track Record"
-            title="Why Clients Trust Us"
-            subtitle="Trusted by agencies, startups, and businesses worldwide on Fiverr, Upwork, and direct clients."
+            title="Why Leading Teams Trust ProLeadMaker"
+            subtitle="Trusted by agencies, startups, and high-growth businesses worldwide on Fiverr, Upwork, and beyond."
           />
         </ScrollReveal>
 
         <div
           ref={ref}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14"
         >
           {statCards.map((card, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="glass rounded-2xl p-5 text-center hover-glow cursor-default h-full">
-                <div className="text-2xl mb-2">{card.icon}</div>
+              <div className="bg-slate-50 rounded-3xl p-8 text-center border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-brand-purple/5 transition-all duration-500 cursor-default h-full group">
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform">{card.icon}</div>
                 <AnimatedCounter
                   target={card.value}
                   suffix={card.suffix}
                   decimal={card.decimal}
                   trigger={triggered}
                 />
-                <div className="text-xs text-white/40 mt-1">{card.label}</div>
+                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2">{card.label}</div>
                 {card.hasBar && (
                   <ProgressBar target={card.value} trigger={triggered} />
                 )}
@@ -139,21 +138,21 @@ export default function StatsSection() {
 
         {/* Platform badges */}
         <ScrollReveal delay={400}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
             {[
               { icon: "⭐", name: "Fiverr", status: "Level 2 Seller · 5.0 Rating" },
               { icon: "🏆", name: "Upwork", status: "Top Rated · 100% Job Success" },
-              { icon: "🎯", name: "Research Method", status: "Signal-Based + Manual Verified" },
-              { icon: "🔄", name: "Guarantee", status: "Free Replacement on Invalid Data" },
+              { icon: "🎯", name: "Expertise", status: "Signal-Based + Manual Verified" },
+              { icon: "🔄", name: "Guarantee", status: "Free Replacement Guarantee" },
             ].map((platform) => (
               <div
                 key={platform.name}
-                className="glass rounded-xl p-4 flex items-center gap-3 hover-glow cursor-default"
+                className="bg-white rounded-2xl p-5 flex items-center gap-4 border border-slate-100 shadow-sm hover:shadow-xl hover:border-brand-purple/20 transition-all cursor-default group"
               >
-                <span className="text-2xl">{platform.icon}</span>
+                <span className="text-3xl grayscale group-hover:grayscale-0 transition-all">{platform.icon}</span>
                 <div>
-                  <div className="font-bold text-white text-sm">{platform.name}</div>
-                  <div className="text-xs text-brand-purple-light">{platform.status}</div>
+                  <div className="font-black text-indigo-950 text-sm tracking-tight">{platform.name}</div>
+                  <div className="text-xs font-bold text-brand-purple/70">{platform.status}</div>
                 </div>
               </div>
             ))}
